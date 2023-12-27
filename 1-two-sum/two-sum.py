@@ -5,10 +5,8 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        out = []
         for i in range(0,len(nums)-1):
             for j in range(i+1,len(nums)):
                 if (target - nums[i]) == nums[j]:
-                    out.append(i)
-                    out.append(j) 
-        return out
+                    return [i,j]
+        return null
