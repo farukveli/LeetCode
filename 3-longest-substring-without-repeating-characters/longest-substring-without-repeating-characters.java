@@ -8,13 +8,14 @@ class Solution {
         HashMap<Character, Integer> charIndexMap = new HashMap<>();
         int maxLength = 0;
         int start = 0;
-
+        int i;
         for (int end = 0; end < n; end++) {
             char currentChar = s.charAt(end);
 
             if (charIndexMap.containsKey(currentChar)) {
-                if(charIndexMap.get(currentChar) + 1 > start){
-                    start = charIndexMap.get(currentChar) + 1;
+                i = charIndexMap.get(currentChar);
+                if(i + 1 > start){
+                    start = i + 1;
                 }
             }
 
