@@ -13,12 +13,16 @@ class Solution {
             char currentChar = s.charAt(end);
 
             if (charIndexMap.containsKey(currentChar)) {
-                start = Math.max(charIndexMap.get(currentChar) + 1, start);
+                if(charIndexMap.get(currentChar) + 1 > start){
+                    start = charIndexMap.get(currentChar) + 1;
+                }
             }
 
             charIndexMap.put(currentChar, end);
-
-            maxLength = Math.max(maxLength, end - start + 1);
+            if( maxLength < end-start+1){
+                maxLength = end - start + 1;
+            }
+            
         }
 
         return maxLength;
